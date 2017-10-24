@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Slate</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/angular-gridster.min.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    
+    <!---
+<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.1.7/css/dx.spa.css" />
+    -->
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/17.1.7/css/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="https://cdn3.devexpress.com/jslib/17.1.7/css/dx.light.css" /> 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://code.angularjs.org/1.2.15/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <script>window.angular || document.write(decodeURIComponent('%3Cscript src="js/angular.min.js"%3E%3C\/script%3E'))</script>
+
+    <script src="https://cdn3.devexpress.com/jslib/17.1.7/js/dx.all.js"></script>
+
+    <script src="vendor/angular-gridster.js"></script>
+
+    <script type="text/javascript">
+        (function() {
+            angular.module('app', ['gridster', 'ui.bootstrap', 'ngRoute', 'dx'])
+                .config(['$routeProvider',
+                    function($routeProvider) {
+                        $routeProvider
+                            .when('/', {
+                                templateUrl: 'app/view.html',
+                                controller: 'DashboardCtrl'
+                            })
+                            .otherwise({
+                                redirectTo: '/'
+                            });
+                    }
+                ])
+                .controller('RootCtrl', function($scope) {
+
+                });
+        })();
+    </script>
+    <link rel="stylesheet" href="app/style.css" />
+    <script src="app/script.js"></script>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="RootCtrl">
+        <div class="container" ng-view></div>
+    </div>
+</body>
+
+</html>

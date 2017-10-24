@@ -1,0 +1,30 @@
+<div>
+	<a class="pull-left btn btn-primary" ng-click="addWidget()"><i class="glyphicon glyphicon-plus"></i></a>
+	<a class="pull-left btn btn-warning" ng-click="clear()"><i class="glyphicon glyphicon-trash"></i></a>
+</div>
+<p style="margin:50px">
+</p>
+<div gridster="gridsterOptions">
+	<ul>
+		<li gridster-item="widget" ng-repeat="widget in dashboard.widgets">
+			<div class="box" ng-controller="CustomWidgetCtrl">
+				<div class="box-header">
+					<h3>{{ widget.name }}</h3>
+					<div class="box-header-btns pull-right">
+						<a title="settings" ng-click="openSettings(widget)"><i class="glyphicon glyphicon-cog"></i></a>
+						<a title="Remove widget" ng-click="remove(widget)"><i class="glyphicon glyphicon-trash"></i></a>
+					</div>
+				</div>
+				<div class="box-content">
+                    {{ widget.id}}
+                    {{ widget.sizeX}}
+                    {{ widget.sizeY}}
+                    
+                    <div ng-controller="GaugeController" ng-init="initx(widget)">
+                        <div id="gauge-{{widget.id}}" dx-circular-gauge="gaugeOptions" ></div>
+                     </div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
